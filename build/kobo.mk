@@ -22,7 +22,7 @@ KOBO_MENU_SOURCES = \
 	$(SRC)/Dialogs/TextEntry.cpp \
 	$(SRC)/Dialogs/KnobTextEntry.cpp \
 	$(SRC)/Dialogs/TouchTextEntry.cpp \
-	$(SRC)/Dialogs/SimulatorPromptWindow.cpp \
+	$(SRC)/Dialogs/KoboPromptWindow.cpp \
 	$(TEST_SRC_DIR)/Fonts.cpp \
 	$(TEST_SRC_DIR)/FakeLanguage.cpp \
 	$(SRC)/Kobo/WPASupplicant.cpp \

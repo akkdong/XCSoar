@@ -22,7 +22,7 @@ Copyright_License {
 */
 
 #include "Dialogs/DialogSettings.hpp"
-#include "Dialogs/SimulatorPromptWindow.hpp"
+#include "Dialogs/KoboPromptWindow.hpp"
 #include "Dialogs/WidgetDialog.hpp"
 #include "Widget/WindowWidget.hpp"
 #include "UIGlobals.hpp"
@@ -43,6 +43,7 @@ Copyright_License {
 
 enum Buttons {
   LAUNCH_NICKEL = 100,
+  LAUNCH_LK8000,
   TOOLS,
   NETWORK,
   SYSTEM,
@@ -77,7 +78,7 @@ UIGlobals::GetDialogLook()
 
 class KoboMenuWidget final : public WindowWidget, ActionListener {
   ActionListener &dialog;
-  SimulatorPromptWindow w;
+  KoboPromptWindow w;
 
 public:
   KoboMenuWidget(const DialogLook &_look,
@@ -102,6 +103,7 @@ KoboMenuWidget::CreateButtons(WidgetDialog &buttons)
 {
   buttons.AddButton(("Nickel"), dialog, LAUNCH_NICKEL)
       ->SetEnabled(!IsKoboOTGKernel());
+  buttons.AddButton(("LK8000"), *this, LAUNCH_LK8000);
   buttons.AddButton(("Tools"), *this, TOOLS);
   buttons.AddButton(_("Network"), *this, NETWORK);
   buttons.AddButton("System", *this, SYSTEM);
@@ -206,13 +208,18 @@ int main(int argc, char **argv)
     case LAUNCH_NICKEL:
       KoboExecNickel();
       return EXIT_FAILURE;
+	  
+	case LAUNCH_LK8000:
+	  KoboRunLK8000();
+	  /* return to menu after LK8000 quits */
+	  break;
 
-    case SimulatorPromptWindow::FLY:
+    case KoboPromptWindow::FLY:
       KoboRunXCSoar("-fly");
       /* return to menu after XCSoar quits */
       break;
 
-    case SimulatorPromptWindow::SIMULATOR:
+    case KoboPromptWindow::SIMULATOR:
       KoboRunXCSoar("-simulator");
       /* return to menu after XCSoar quits */
       break;
