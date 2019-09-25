@@ -258,7 +258,12 @@ void
 KoboRunLK8000()
 {
 #ifdef KOBO
-  Run("/opt/LK8000/bin/LK8000-KOBO");
+  const char * argv[] = {
+	  "/opt/LK8000/bin/LK8000-KOBO",
+	  0
+  };
+
+  Run(argv);
 #endif
 }
 

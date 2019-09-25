@@ -100,6 +100,7 @@ $(TARGET_OUTPUT_DIR)/KoboRoot.tgz: $(XCSOAR_BIN) \
 	$(Q)install -m 0644 $(topdir)/kobo/inittab $(@D)/KoboRoot/etc
 	$(Q)install -m 0644 $(topdir)/kobo/udev.rules $(@D)/KoboRoot/etc/udev/rules.d/99-xcsoar.rules
 	$(Q)install -m 0644 $(BITSTREAM_VERA_FILES) $(@D)/KoboRoot/opt/xcsoar/share/fonts
+	$(Q)tar xzf $(topdir)/kobo/lk8000/KoboRoot-LK8000.tgz -C $(@D)/KoboRoot
 	$(Q)fakeroot tar czfC $@ $(@D)/KoboRoot .
 
 endif

@@ -103,7 +103,7 @@ KoboMenuWidget::CreateButtons(WidgetDialog &buttons)
 {
   buttons.AddButton(("Nickel"), dialog, LAUNCH_NICKEL)
       ->SetEnabled(!IsKoboOTGKernel());
-  buttons.AddButton(("LK8000"), *this, LAUNCH_LK8000);
+  buttons.AddButton(("LK8000"), dialog, LAUNCH_LK8000);
   buttons.AddButton(("Tools"), *this, TOOLS);
   buttons.AddButton(_("Network"), *this, NETWORK);
   buttons.AddButton("System", *this, SYSTEM);
