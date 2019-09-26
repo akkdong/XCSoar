@@ -100,7 +100,14 @@ void
 ToolsWidget::OnAction(int id) noexcept
 {
   if (id >= 0 && id < (int) list.size())
-    Run(list[id].path.c_str());
+  {
+    const char * argv[] = {
+      list[id].path.c_str(),
+      0
+    };
+
+    Run(argv);
+  }
 }
 
 void
