@@ -21,23 +21,12 @@ Copyright_License {
 }
 */
 
-#ifndef XCSOAR_DISPLAY_SETTINGS_HPP
-#define XCSOAR_DISPLAY_SETTINGS_HPP
+#ifndef XCSOAR_INFOBOX_CONTENT_RADIO_HPP
+#define XCSOAR_INFOBOX_CONTENT_RADIO_HPP
 
-#include "DisplayOrientation.hpp"
+#include "InfoBoxes/Content/Base.hpp"
+#include "RadioFrequency.hpp"
 
-#include <type_traits>
-
-/**
- * Display settings.
- */
-struct DisplaySettings {
-  DisplayOrientation orientation;
-  uint8_t cursor_size;
-
-  void SetDefaults();
-};
-
-static_assert(std::is_trivial<DisplaySettings>::value, "type is not trivial");
-
+void UpdateInfoBoxActiveFrequency(InfoBoxData &data);
+void UpdateInfoBoxStandbyFrequency(InfoBoxData &data);
 #endif
