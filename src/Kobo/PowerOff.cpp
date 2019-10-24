@@ -44,6 +44,29 @@ Copyright_License {
 #include <stdio.h>
 
 static void
+DrawEagle(Canvas &canvas, PixelRect &rc)
+{
+  const Bitmap logo(IDB_EAGLE_HD);
+
+  // draw Eagle logo
+  unsigned x = rc.GetWidth() / 5;
+  unsigned w = rc.GetWidth() - x * 2;
+
+  canvas.Stretch(x, x, w, w, logo);
+
+  // draw Copyright
+  Font font;
+  font.LoadFile("/opt/xcsoar/share/fonts/VeraBd.ttf", 24);
+
+  int tx = rc.left + 2;
+  int ty = rc.bottom - 2 - font.GetHeight();
+  canvas.Select(font);
+  canvas.SetTextColor(COLOR_BLACK);
+  canvas.SetBackgroundTransparent();
+  canvas.DrawText(tx, ty, _T("Flight Computer Powered Off"));
+}
+
+static void
 DrawBanner(Canvas &canvas, PixelRect &rc)
 {
   const unsigned padding = 2;
@@ -114,8 +137,12 @@ Draw(Canvas &canvas)
   PixelRect rc = canvas.GetRect();
   rc.Grow(-16);
 
+  #if 0
   DrawBanner(canvas, rc);
   DrawFlights(canvas, rc);
+  #else
+  DrawEagle(canvas, rc);
+  #endif
 }
 
 int main(int argc, char **argv)

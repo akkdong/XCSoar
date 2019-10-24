@@ -44,13 +44,13 @@ SimulatorPromptWindow::OnCreate()
   WindowStyle style;
   style.TabStop();
 
-  fly_bitmap.Load(IDB_LAUNCHER1);
+  fly_bitmap.Load(IDB_KOBO_LAUNCHER1);
   fly_bitmap.EnableInterpolation();
   fly_button.Create(*this, rc, style,
                     new BitmapButtonRenderer(fly_bitmap),
                     action_listener, FLY);
 
-  sim_bitmap.Load(IDB_LAUNCHER2);
+  sim_bitmap.Load(IDB_KOBO_LAUNCHER2);
   sim_bitmap.EnableInterpolation();
   sim_button.Create(*this, rc, style,
                     new BitmapButtonRenderer(sim_bitmap),

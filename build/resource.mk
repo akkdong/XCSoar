@@ -49,7 +49,7 @@ $(eval $(call convert-to-bmp,$(BMP_ICONS) $(BMP_ICONS_160),%.bmp,%_tile.png))
 
 ####### splash logo
 
-SVG_SPLASH = Data/graphics/logo.svg Data/graphics/logo_red.svg
+SVG_SPLASH = Data/graphics/logo.svg Data/graphics/logo_red.svg Data/graphics/eagle.svg Data/graphics/lk8000.svg
 PNG_SPLASH_320 = $(patsubst Data/graphics/%.svg,$(DATA)/graphics/%_320.png,$(SVG_SPLASH))
 BMP_SPLASH_320 = $(PNG_SPLASH_320:.png=.bmp)
 PNG_SPLASH_160 = $(patsubst Data/graphics/%.svg,$(DATA)/graphics/%_160.png,$(SVG_SPLASH))
@@ -75,7 +75,7 @@ $(ICNS_SPLASH_1024): %.icns: %.png
 
 ####### version
 
-SVG_TITLE = Data/graphics/title.svg Data/graphics/title_red.svg
+SVG_TITLE = Data/graphics/title.svg Data/graphics/title_red.svg Data/graphics/fc_title.svg Data/graphics/fc_title_red.svg
 PNG_TITLE_110 = $(patsubst Data/graphics/%.svg,$(DATA)/graphics/%_110.png,$(SVG_TITLE))
 BMP_TITLE_110 = $(PNG_TITLE_110:.png=.bmp)
 PNG_TITLE_320 = $(patsubst Data/graphics/%.svg,$(DATA)/graphics/%_320.png,$(SVG_TITLE))
@@ -114,7 +114,7 @@ $(eval $(call convert-to-bmp-white,$(BMP_PROGRESS_BORDER),%.bmp,%.png))
 
 ####### launcher graphics
 
-SVG_LAUNCH = Data/graphics/launcher.svg Data/graphics/launcher_red.svg
+SVG_LAUNCH = Data/graphics/launcher.svg Data/graphics/launcher_red.svg Data/graphics/launcher_kobo.svg
 PNG_LAUNCH_224 = $(patsubst Data/graphics/%.svg,$(DATA)/graphics/%_224.png,$(SVG_LAUNCH))
 BMP_LAUNCH_FLY_224 = $(PNG_LAUNCH_224:.png=_1.bmp)
 BMP_LAUNCH_SIM_224 = $(PNG_LAUNCH_224:.png=_2.bmp)

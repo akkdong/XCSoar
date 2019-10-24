@@ -103,7 +103,7 @@ KoboMenuWidget::CreateButtons(WidgetDialog &buttons)
 {
   buttons.AddButton(("Nickel"), dialog, LAUNCH_NICKEL)
       ->SetEnabled(!IsKoboOTGKernel());
-  buttons.AddButton(("LK8000"), dialog, LAUNCH_LK8000);
+  //buttons.AddButton(("LK8000"), dialog, LAUNCH_LK8000);
   buttons.AddButton(("Tools"), *this, TOOLS);
   buttons.AddButton(_("Network"), *this, NETWORK);
   buttons.AddButton("System", *this, SYSTEM);
@@ -210,11 +210,13 @@ int main(int argc, char **argv)
       return EXIT_FAILURE;
 	  
 	case LAUNCH_LK8000:
+  case KoboPromptWindow::RUN_LK8000:
 	  KoboRunLK8000();
 	  /* return to menu after LK8000 quits */
 	  break;
 
     case KoboPromptWindow::FLY:
+    case KoboPromptWindow::RUN_XCSOAR:
       KoboRunXCSoar("-fly");
       /* return to menu after XCSoar quits */
       break;

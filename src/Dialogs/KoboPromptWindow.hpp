@@ -53,6 +53,8 @@ public:
   enum Buttons {
     FLY = 1000,
     SIMULATOR,
+    RUN_XCSOAR,
+    RUN_LK8000,
     QUIT,
   };
 

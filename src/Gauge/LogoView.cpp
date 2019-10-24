@@ -31,8 +31,8 @@ Copyright_License {
 #include <algorithm>
 
 LogoView::LogoView()
-  :logo(IDB_LOGO), big_logo(IDB_LOGO_HD),
-   title(IDB_TITLE), big_title(IDB_TITLE_HD)
+  :logo(IDB_EAGLE), big_logo(IDB_EAGLE_HD),
+   title(IDB_FC_TITLE), big_title(IDB_FC_TITLE_HD)
 {
 #ifndef USE_GDI
   font.Load(FontDescription(Layout::FontScale(10)));
@@ -152,5 +152,6 @@ LogoView::draw(Canvas &canvas, const PixelRect &rc)
 
   canvas.SetTextColor(COLOR_BLACK);
   canvas.SetBackgroundTransparent();
-  canvas.DrawText(2, 2, XCSoar_ProductToken);
+  //canvas.DrawText(2, 2, XCSoar_ProductToken);
+  canvas.DrawText(2, 2, _T("Powered by Notorious Rascal Club"));
 }

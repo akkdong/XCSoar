@@ -33,3 +33,6 @@ build/local-config.mk
 *.pyo
 *.bak
 .*.swp
+
+.vscode
+.vs
